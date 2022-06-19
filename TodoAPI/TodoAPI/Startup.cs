@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using BankingApi.Data;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,7 @@ namespace TodoAPI
         {
             services.AddDbContext<TodoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TodoConnectionString")));
             services.AddControllers();
+            services.AddTransient<DbInitialiser>();
             services.AddScoped<ITodoRepository, TodoRepository>();
         }
         #endregion
@@ -43,7 +45,7 @@ namespace TodoAPI
                 app.UseHttpsRedirection();
             }
 
-            todoContext.Seed();
+            //   todoContext.Seed();
 
             app.UseRouting();
 
