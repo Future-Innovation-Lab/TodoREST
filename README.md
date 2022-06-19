@@ -18,7 +18,7 @@ The app functionality is:
 - Add, edit, and delete tasks.
 - Set a task's status to 'done'.
 
-In all cases the tasks are stored in an in-memory collection that's accessed through a RESTful web service.
+In all cases the tasks are stored in an SQL Server that's accessed through a RESTful web service.
 
 For more information about the sample see [Consuming a RESTful Web Service](https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/web-services/rest).
 
